@@ -9,5 +9,4 @@ data class UserResponseItem(
     val phone: String,
     val username: String,
     val website: String
-) {
-}
+)

@@ -10,42 +10,16 @@ import retrofit2.HttpException
 
 class CoroutineRepository(val network: DummyNetwork) {
 
-    val user = MutableLiveData<List<UserResponseItem>>()
+    val data = MutableLiveData<List<UserResponseItem>>()
 
-    //    suspend fun fetchUsers():List<UserResponseItem>{
-//        return withContext(Dispatchers.IO){
-//            network.fetchUsers()
-//        }
-//    }
-    suspend fun fetchUsers() {
+    suspend fun fetchUsersById(stringNumber : String) {
         try {
             val result = withTimeout(5000) {
-                network.fetchUsers()
+                network.fetchUserById(stringNumber)
             }
-            Log.d("testinghaha","vvvv $result")
+            data.postValue(listOf(result))
         } catch (error: Throwable) {
-            Log.d("testinghaha","cccc $error")
             Log.d("testinghaha","${error.message}")
-//            throw TitleRefreshError("Unable to refresh title", error)
-        }
-    }
-
-
-    suspend fun fetchUserById(userResponseCallback: UserResponseCallback){
-        withContext(Dispatchers.IO){
-            try {
-                val response = network.fetchUsers()
-                if(response.isNotEmpty()){
-                    user.postValue(response)
-                    userResponseCallback.onSuccess()
-                }
-            }catch (t: Throwable) {
-                when (t) {
-                    is HttpException -> {
-                        userResponseCallback.onError(t)
-                    }
-                }
-            }
         }
     }
 }

@@ -17,7 +17,7 @@ private val service: DummyNetwork by lazy {
         .build()
 
     val retrofit = Retrofit.Builder()
-        .baseUrl("http://jsonplaceholder.typicode.com/")
+        .baseUrl("https://jsonplaceholder.typicode.com/")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
@@ -31,10 +31,11 @@ fun getNetworkService() = service
  * Main network interface which will fetch a new welcome title for us
  */
 interface DummyNetwork {
-    @GET("users/")
+    @GET("users")
     suspend fun fetchUsers(): List<UserResponseItem>
 
 
+    //method2
     @GET("users/{user_id}")
     suspend fun fetchUserById(@Path("user_id")user_id: String): UserResponseItem
 }

@@ -9,15 +9,91 @@
         tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/txt_data"
+            android:id="@+id/txt_name_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name : "
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txt_name"
+            app:layout_constraintTop_toTopOf="@id/txt_name"
+            app:layout_constraintEnd_toEndOf="@id/txt_name"/>
+
+        <TextView
+            android:id="@+id/txt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No Data Shown"
-            android:textSize="30dp"
-            app:layout_constraintBottom_toTopOf="@id/et_data"
+            android:textSize="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:id="@+id/txt_userName_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name : "
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txt_username"
+            app:layout_constraintTop_toTopOf="@id/txt_username"
+            app:layout_constraintEnd_toEndOf="@id/txt_username"/>
+
+        <TextView
+            android:id="@+id/txt_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Data Shown"
+            android:textSize="15dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_name"/>
+
+        <TextView
+            android:id="@+id/txt_email_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email : "
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txt_email"
+            app:layout_constraintTop_toTopOf="@id/txt_email"
+            app:layout_constraintEnd_toEndOf="@id/txt_email"/>
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Data Shown"
+            android:textSize="15dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_username"/>
+
+        <TextView
+            android:id="@+id/txt_city_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="city : "
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txt_city"
+            app:layout_constraintTop_toTopOf="@id/txt_city"
+            app:layout_constraintEnd_toEndOf="@id/txt_city"/>
+
+        <TextView
+            android:id="@+id/txt_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Data Shown"
+            android:textSize="15dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_email"/>
 
         <EditText
             android:id="@+id/et_data"
@@ -26,21 +102,32 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:hint="Input Data Here"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:inputType="number"
+            android:layout_marginTop="150dp"
             app:layout_constraintEnd_toStartOf="@+id/btn_search"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_data" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_city" />
 
         <Button
             android:id="@+id/btn_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/et_data"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/et_data"
-            app:layout_constraintTop_toBottomOf="@id/txt_data"
+            app:layout_constraintTop_toTopOf="@id/et_data"
             android:layout_marginEnd="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cuman saya munculkan sebagian saja ya :)"
+            app:layout_constraintTop_toBottomOf="@id/et_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="40dp"/>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
