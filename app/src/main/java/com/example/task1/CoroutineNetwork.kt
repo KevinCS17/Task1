@@ -31,9 +31,9 @@ fun getNetworkService() = service
  * Main network interface which will fetch a new welcome title for us
  */
 interface DummyNetwork {
-    @GET("users")
-//    suspend fun fetchUsers(): List<UserResponseItem>
-    suspend fun fetchUsers(): UserResponseItem
+    @GET("users/")
+    suspend fun fetchUsers(): List<UserResponseItem>
+
 
     @GET("users/{user_id}")
     suspend fun fetchUserById(@Path("user_id")user_id: String): UserResponseItem

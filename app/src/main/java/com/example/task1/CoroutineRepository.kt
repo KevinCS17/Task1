@@ -19,7 +19,7 @@ class CoroutineRepository(val network: DummyNetwork) {
 //    }
     suspend fun fetchUsers() {
         try {
-            val result = withTimeout(10000) {
+            val result = withTimeout(5000) {
                 network.fetchUsers()
             }
             Log.d("testinghaha","vvvv $result")
